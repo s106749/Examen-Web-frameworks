@@ -12,7 +12,7 @@ MongoClient.connect('mongodb://localhost:27017', (err, database) => {
 router.get('/', (req, res) => {
     db.collection('students').find().toArray((err, result) => {
         result = result.sort(function (a, b) {
-            var x = a.name < b.name ? -1 : 1;
+            var x = a.naam < b.naam ? -1 : 1;
             return x;
         })
         if (err) return
